@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sistem Antrian M/M/2</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Studi Kasus: Antrian Taman Bermain</h1>
+        <h2>by: Sofy Nur Kholifah</h2> <!-- Judul tambahan pada baris kedua -->
+    </header>
+    <div class="container">
+        <h2>Kalkulator Sistem Antrian M/M/2</h2>
+        <form method="post">
+            <label for="lambda">Laju Kedatangan (λ):</label>
+            <input type="number" step="any" id="lambda" name="lambda" required>
+
+            <label for="mu">Laju Pelayanan (μ):</label>
+            <input type="number" step="any" id="mu" name="mu" required>
+
+            <button type="submit">Hitung</button>
+        </form>
+    </div>
+</body>
+</html>

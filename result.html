@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Perhitungan Antrian Taman Bermain</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .result-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .result-box pre {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .formulas {
+            margin-bottom: 20px;
+        }
+        .results {
+            margin-top: 30px;
+            background-color: #eaf8e4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .results p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <h1>Studi Kasus: Antrian Taman Bermain</h1>
+    <p>Hasil Perhitungan Sistem Antrian M/M/2</p>
+
+    <div class="result-box">
+        <!-- Menampilkan rumus yang lebih rapi -->
+        <div class="formulas">
+            <p><strong>1. Laju Kedatangan (λ):</strong></p>
+            <pre>λ = 1 / Waktu antar kedatangan</pre>
+
+            <p><strong>2. Laju Pelayanan (μ):</strong></p>
+            <pre>μ = 1 / Waktu pelayanan per pelayan</pre>
+
+            <p><strong>3. Pemanfaatan Pelayan (ρ):</strong></p>
+            <pre>ρ = λ / (2μ)</pre>
+
+            <p><strong>4. Waktu Total Rata-Rata dalam Sistem (W):</strong></p>
+            <pre>W = 1 / (μ - λ / 2) = {{ W }}</pre>
+
+            <p><strong>5. Waktu Rata-Rata Tunggu dalam Antrian (Wq):</strong></p>
+            <pre>Wq = λ / (2μ(μ - λ / 2)) = {{ Wq }}</pre>
+        </div>
+
+        <!-- Menampilkan hasil perhitungan -->
+        <div class="results">
+            <p><strong>Hasil Perhitungan:</strong></p>
+            <p><strong>Utilisasi Sistem (ρ):</strong> {{ rho }}</p>
+            <p><strong>Probabilitas tidak ada pelanggan (P0):</strong> {{ p0 }}</p>
+            <p><strong>Probabilitas ada 1 pelanggan (P1):</strong> {{ p1 }}</p>
+            <p><strong>Probabilitas ada 2 pelanggan (P2):</strong> {{ p2 }}</p>
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}">Kembali ke Halaman Input</a>
+</body>
+</html>
